@@ -279,7 +279,7 @@
       [self goToQuizDetail:NumLaiQuizMode1];
     } else {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                      message:@"เธอสามารถปลดล๊อดโหมดละครเก่าช่อง 3 ได้อย่างง่ายๆ เพียงแค่เล่นโหมดละครออนแอร์ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
+                                                      message:@"เธอสามารถปลดล๊อดโหมดเพลงประกอบละคร ได้อย่างง่ายๆ เพียงแค่เล่นโหมดเพลงฮิตติดชาร์ทให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
                                                      delegate:self
                                             cancelButtonTitle:@"ตกลงจ้ะ"
                                             otherButtonTitles:nil];
@@ -294,7 +294,7 @@
         [self goToQuizDetail:NumLaiQuizMode2];
       } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                        message:@"เธอสามารถปลดล๊อดโหมดละครเก่าช่อง 5 ได้อย่างง่ายๆ เพียงแค่เล่นโหมดละครเก่าช่อง 3 ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
+                                                        message:@"เธอสามารถปลดล๊อดโหมดเพลงยุคไนนตี้ 90s ได้อย่างง่ายๆ เพียงแค่เล่นโหมดเพลงประกอบละคร ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
                                                        delegate:self
                                               cancelButtonTitle:@"ตกลงจ้ะ"
                                               otherButtonTitles:nil];
@@ -303,7 +303,7 @@
       }
     } else {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                      message:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดละครเก่าช่อง 3 ได้ง่ายๆ โดยการเล่นโหมดละครออนแอร์ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย"
+                                                      message:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดเพลงประกอบละคร ได้ง่ายๆ โดยการเล่นโหมดเพลงฮิตติดชาร์ทให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย"
                                                      delegate:self
                                             cancelButtonTitle:@"ไม่ล่ะฮะ"
                                             otherButtonTitles:@"ซื้อจ้ะ",nil];
@@ -319,7 +319,7 @@
         [self goToQuizDetail:NumLaiQuizMode3];
       } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                        message:@"เธอสามารถปลดล๊อดโหมดละครเก่าช่อง 7 ได้อย่างง่ายๆ เพียงแค่เล่นโหมดละครเก่าช่อง 5 ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
+                                                        message:@"เธอสามารถปลดล๊อดโหมดเพลงเพราะหน้า B ได้อย่างง่ายๆ เพียงแค่เล่นโหมดเพลงยุคไนนตี้ 90s ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
                                                        delegate:self
                                               cancelButtonTitle:@"ตกลงจ้ะ"
                                               otherButtonTitles:nil];
@@ -328,7 +328,7 @@
       }
     } else {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                      message:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดละครเก่าช่อง 5 ได้ง่ายๆ โดยการเล่นโหมดละครเก่าช่อง 3 ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย"
+                                                      message:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดเพลงยุคไนนตี้ 90s ได้ง่ายๆ โดยการเล่นโหมดเพลงประกอบละคร ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย"
                                                      delegate:self
                                             cancelButtonTitle:@"ไม่ซื้อ"
                                             otherButtonTitles:@"ซื้อต่อ",nil];
@@ -342,7 +342,7 @@
       [self goToQuizDetail:NumLaiQuizMode4];
     } else {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                      message:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดละครเก่าช่อง 7 ได้ง่ายๆ โดยการเล่นโหมดละครเก่าช่อง 5 ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย"
+                                                      message:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดเพลงเพราะหน้า B ได้ง่ายๆ โดยการเล่นโหมดเพลงยุคไนนตี้ 90s ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย"
                                                      delegate:self
                                             cancelButtonTitle:@"ไม่ซื้อ"
                                             otherButtonTitles:@"ซื้อต่อ",nil];

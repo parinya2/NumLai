@@ -243,7 +243,7 @@ NSInteger const PlayerNameMaxLength = 40;
         if (!IAPInstance.retroCh3Purchased) {
           IAPInstance.retroCh3Purchased = YES;
           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ยินดีด้วย !!"
-                                                          message:@"เธอปลดล๊อดโหมดละครเก่าช่อง 3 ได้สำเร็จแล้ว !!"
+                                                          message:@"เธอปลดล๊อดโหมดเพลงประกอบละคร ได้สำเร็จแล้ว !!"
                                                          delegate:nil
                                                 cancelButtonTitle:@"ตกลงจ้ะ"
                                                 otherButtonTitles:nil];
@@ -256,7 +256,7 @@ NSInteger const PlayerNameMaxLength = 40;
         if (!IAPInstance.retroCh5Purchased) {
           IAPInstance.retroCh5Purchased = YES;
           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ยินดีด้วย !!"
-                                                          message:@"เธอปลดล๊อดโหมดละครเก่าช่อง 5 ได้สำเร็จแล้ว !!"
+                                                          message:@"เธอปลดล๊อดโหมดเพลงยุคไนนตี้ 90s ได้สำเร็จแล้ว !!"
                                                          delegate:nil
                                                 cancelButtonTitle:@"ตกลงจ้ะ"
                                                 otherButtonTitles:nil];
@@ -269,7 +269,7 @@ NSInteger const PlayerNameMaxLength = 40;
         if (!IAPInstance.retroCh7Purchased) {
           IAPInstance.retroCh7Purchased = YES;
           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ยินดีด้วย !!"
-                                                          message:@"เธอปลดล๊อดโหมดละครเก่าช่อง 7 ได้สำเร็จแล้ว !!"
+                                                          message:@"เธอปลดล๊อดโหมดเพลงเพราะหน้า B ได้สำเร็จแล้ว !!"
                                                          delegate:nil
                                                 cancelButtonTitle:@"ตกลงจ้ะ"
                                                 otherButtonTitles:nil];

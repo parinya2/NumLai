@@ -157,7 +157,7 @@
 }
 
 - (IBAction)goToQuizRank:(id)sender {
-  UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"ช้าก่อน" message:@"เธออยากดูคะแนนหมวดไหนจ้ะ" delegate:self cancelButtonTitle:@"ไม่ดูละ" otherButtonTitles:@"ละครออนแอร์", @"ละครเก่าช่อง 3", @"ละครเก่าช่อง 5", @"ละครเก่าช่อง 7", nil];
+  UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"ช้าก่อน" message:@"เธออยากดูคะแนนหมวดไหนจ้ะ" delegate:self cancelButtonTitle:@"ไม่ดูละ" otherButtonTitles:@"เพลงฮิตติดชาร์ท", @"เพลงประกอบละคร", @"เพลงยุคไนนตี้ 90s", @"เพลงเพราะหน้า B", nil];
 
   alert.tag = 4;
   [alert show];
