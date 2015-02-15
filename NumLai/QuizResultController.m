@@ -238,7 +238,7 @@ NSInteger const PlayerNameMaxLength = 40;
   
   if (self.quizScore >= quizScoreToUnlock) {
     switch (self.quizMode) {
-      case NumNaoQuizModeOnAir: {
+      case NumLaiQuizMode1: {
         // Mode: On air
         if (!IAPInstance.retroCh3Purchased) {
           IAPInstance.retroCh3Purchased = YES;
@@ -251,7 +251,7 @@ NSInteger const PlayerNameMaxLength = 40;
         }
       } break;
       
-      case NumNaoQuizModeRetroCh3: {
+      case NumLaiQuizMode2: {
         // Mode: Retro CH 3
         if (!IAPInstance.retroCh5Purchased) {
           IAPInstance.retroCh5Purchased = YES;
@@ -264,7 +264,7 @@ NSInteger const PlayerNameMaxLength = 40;
         }
       } break;
         
-      case NumNaoQuizModeRetroCh5: {
+      case NumLaiQuizMode3: {
         // Mode: Retro CH 5
         if (!IAPInstance.retroCh7Purchased) {
           IAPInstance.retroCh7Purchased = YES;

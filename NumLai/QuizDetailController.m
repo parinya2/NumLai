@@ -135,19 +135,19 @@ const float LoadNextQuizDelayTime = 0.25;
    usingBlock:^(NSNotification *note) {
      QuizManager *quizManager = [QuizManager sharedInstance];
      switch (weakSelf.quizMode) {
-       case NumNaoQuizModeOnAir: {
+       case NumLaiQuizMode1: {
          weakSelf.quizList = quizManager.quizListOnAir;
        } break;
          
-       case NumNaoQuizModeRetroCh3: {
+       case NumLaiQuizMode2: {
          weakSelf.quizList = quizManager.quizListRetroCh3;
        } break;
          
-       case NumNaoQuizModeRetroCh5: {
+       case NumLaiQuizMode3: {
          weakSelf.quizList = quizManager.quizListRetroCh5;
        } break;
          
-       case NumNaoQuizModeRetroCh7: {
+       case NumLaiQuizMode4: {
          weakSelf.quizList = quizManager.quizListRetroCh7;
        } break;
          
@@ -247,7 +247,7 @@ const float LoadNextQuizDelayTime = 0.25;
 
 - (QuizObject *)randomQuiz {
   QuizObject *quizObject = nil;
-  if (self.quizMode == NumNaoQuizModeOnAir &&
+  if (self.quizMode == NumLaiQuizMode1 &&
       self.quizListLevel1.count &&
       self.quizListLevel2.count &&
       self.quizListLevel3.count) {

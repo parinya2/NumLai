@@ -16,11 +16,11 @@ extern NSString * const URLNumNaoAppStore;
 extern NSString * const URLNumNaoFacebookPage;
 extern NSString * const PlayerDummyName;
 
-typedef NS_ENUM(NSInteger, NumNaoQuizMode) {
-  NumNaoQuizModeOnAir = 0,
-  NumNaoQuizModeRetroCh3 = 1,
-  NumNaoQuizModeRetroCh5 = 2,
-  NumNaoQuizModeRetroCh7 = 3,
+typedef NS_ENUM(NSInteger, NumLaiQuizMode) {
+  NumLaiQuizMode1 = 1, //เพลงฮิตติดชาร์ท
+  NumLaiQuizMode2 = 2, //เพลงประกอบละคร
+  NumLaiQuizMode3 = 3, //เพลงยุคไนนตี้ 90s
+  NumLaiQuizMode4 = 4, //เพลงเพราะหน้า B
 };
 
 @interface QuizManager : NSObject

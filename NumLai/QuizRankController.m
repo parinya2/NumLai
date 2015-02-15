@@ -252,10 +252,10 @@ const NSInteger QuizRankDisplayCount = 10;
   [backBtnLayer setBorderColor:[[UIColor blackColor] CGColor]];
   
   switch (self.quizMode) {
-    case NumNaoQuizModeOnAir: self.quizModeLabel.text = @"ละครออนแอร์"; break;
-    case NumNaoQuizModeRetroCh3: self.quizModeLabel.text = @"ละครเก่าช่อง 3"; break;
-    case NumNaoQuizModeRetroCh5: self.quizModeLabel.text = @"ละครเก่าช่อง 5"; break;
-    case NumNaoQuizModeRetroCh7: self.quizModeLabel.text = @"ละครเก่าช่อง 7"; break;
+    case NumLaiQuizMode1: self.quizModeLabel.text = @"เพลงฮิตติดชาร์ท"; break;
+    case NumLaiQuizMode2: self.quizModeLabel.text = @"เพลงประกอบละคร"; break;
+    case NumLaiQuizMode3: self.quizModeLabel.text = @"เพลงยุคไนนตี้ 90s"; break;
+    case NumLaiQuizMode4: self.quizModeLabel.text = @"เพลงเพราะหน้า B"; break;
     default:
       break;
   }

@@ -116,10 +116,10 @@
   } else if (alertView.tag == 4) {
     BOOL goToQuizRank = YES;
     switch (buttonIndex) {
-      case 1: self.quizRankMode = NumNaoQuizModeOnAir; break;
-      case 2: self.quizRankMode = NumNaoQuizModeRetroCh3; break;
-      case 3: self.quizRankMode = NumNaoQuizModeRetroCh5; break;
-      case 4: self.quizRankMode = NumNaoQuizModeRetroCh7; break;
+      case 1: self.quizRankMode = NumLaiQuizMode1; break;
+      case 2: self.quizRankMode = NumLaiQuizMode2; break;
+      case 3: self.quizRankMode = NumLaiQuizMode3; break;
+      case 4: self.quizRankMode = NumLaiQuizMode4; break;
       default: goToQuizRank = NO; break;
     }
     

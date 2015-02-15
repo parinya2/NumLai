@@ -209,15 +209,15 @@
   NumLaiIAPHelper *IAPInstance = [NumLaiIAPHelper sharedInstance];
   switch (alertView.tag) {
     case 100: {
-      [self goToQuizDetail:NumNaoQuizModeOnAir];
+      [self goToQuizDetail:NumLaiQuizMode1];
     } break;
 
     case 101: {
-      [self goToQuizDetail:NumNaoQuizModeRetroCh3];
+      [self goToQuizDetail:NumLaiQuizMode2];
     } break;
 
     case 102: {
-      [self goToQuizDetail:NumNaoQuizModeRetroCh5];
+      [self goToQuizDetail:NumLaiQuizMode3];
     } break;
       
     case 201 : {
@@ -276,7 +276,7 @@
     
     // Mode: ON AIR
     if (IAPInstance.retroCh3Purchased) {
-      [self goToQuizDetail:NumNaoQuizModeOnAir];
+      [self goToQuizDetail:NumLaiQuizMode1];
     } else {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
                                                       message:@"เธอสามารถปลดล๊อดโหมดละครเก่าช่อง 3 ได้อย่างง่ายๆ เพียงแค่เล่นโหมดละครออนแอร์ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
@@ -291,7 +291,7 @@
     // Mode: Retro CH 3
     if (IAPInstance.retroCh3Purchased) {
       if (IAPInstance.retroCh5Purchased) {
-        [self goToQuizDetail:NumNaoQuizModeRetroCh3];
+        [self goToQuizDetail:NumLaiQuizMode2];
       } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
                                                         message:@"เธอสามารถปลดล๊อดโหมดละครเก่าช่อง 5 ได้อย่างง่ายๆ เพียงแค่เล่นโหมดละครเก่าช่อง 3 ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
@@ -316,7 +316,7 @@
     // Mode: Retro CH 5
     if (IAPInstance.retroCh5Purchased) {
       if (IAPInstance.retroCh7Purchased) {
-        [self goToQuizDetail:NumNaoQuizModeRetroCh5];
+        [self goToQuizDetail:NumLaiQuizMode3];
       } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
                                                         message:@"เธอสามารถปลดล๊อดโหมดละครเก่าช่อง 7 ได้อย่างง่ายๆ เพียงแค่เล่นโหมดละครเก่าช่อง 5 ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
@@ -339,7 +339,7 @@
     
     // Mode: Retro CH 7
     if (IAPInstance.retroCh7Purchased) {
-      [self goToQuizDetail:NumNaoQuizModeRetroCh7];
+      [self goToQuizDetail:NumLaiQuizMode4];
     } else {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
                                                       message:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดละครเก่าช่อง 7 ได้ง่ายๆ โดยการเล่นโหมดละครเก่าช่อง 5 ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย"

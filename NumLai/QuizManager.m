@@ -180,25 +180,25 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
   
   BOOL cacheAvailable = NO;
   switch (quizMode) {
-    case NumNaoQuizModeOnAir: {
+    case NumLaiQuizMode1: {
       if (self.xmlDataOnAir) {
         cacheAvailable = YES;
       }
     } break;
       
-    case NumNaoQuizModeRetroCh3: {
+    case NumLaiQuizMode2: {
       if (self.xmlDataRetroCh3) {
         cacheAvailable = YES;
       }
     } break;
       
-    case NumNaoQuizModeRetroCh5: {
+    case NumLaiQuizMode3: {
       if (self.xmlDataRetroCh5) {
         cacheAvailable = YES;
       }
     } break;
       
-    case NumNaoQuizModeRetroCh7: {
+    case NumLaiQuizMode4: {
       if (self.xmlDataRetroCh7) {
         cacheAvailable = YES;
       }
@@ -217,22 +217,22 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
     NSLog(@"QuizManager Use Cache");
     
     switch (quizMode) {
-      case NumNaoQuizModeOnAir: {
+      case NumLaiQuizMode1: {
         NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataOnAir];
         self.quizListOnAir = [quizList copy];
       } break;
         
-      case NumNaoQuizModeRetroCh3: {
+      case NumLaiQuizMode2: {
         NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataRetroCh3];
         self.quizListRetroCh3 = [quizList copy];
       } break;
         
-      case NumNaoQuizModeRetroCh5: {
+      case NumLaiQuizMode3: {
         NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataRetroCh5];
         self.quizListRetroCh5 = [quizList copy];
       } break;
         
-      case NumNaoQuizModeRetroCh7: {
+      case NumLaiQuizMode4: {
         NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataRetroCh7];
         self.quizListRetroCh7 = [quizList copy];
       } break;
@@ -249,19 +249,19 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
      completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
        if (!error) {
          switch (quizMode) {
-           case NumNaoQuizModeOnAir: {
+           case NumLaiQuizMode1: {
              self.xmlDataOnAir = [data copy];
            } break;
              
-           case NumNaoQuizModeRetroCh3: {
+           case NumLaiQuizMode2: {
              self.xmlDataRetroCh3 = [data copy];
            } break;
              
-           case NumNaoQuizModeRetroCh5: {
+           case NumLaiQuizMode3: {
              self.xmlDataRetroCh5 = [data copy];
            } break;
              
-           case NumNaoQuizModeRetroCh7: {
+           case NumLaiQuizMode4: {
              self.xmlDataRetroCh7 = [data copy];
            } break;
              
@@ -285,22 +285,22 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
          NSMutableArray *quizList = [self extractQuizFromXMLdata:data];
          
          switch (quizMode) {
-           case NumNaoQuizModeOnAir: {
+           case NumLaiQuizMode1: {
              self.xmlDataOnAir = [data copy];
              self.quizListOnAir = [quizList copy];
            } break;
              
-           case NumNaoQuizModeRetroCh3: {
+           case NumLaiQuizMode2: {
              self.xmlDataRetroCh3 = [data copy];
              self.quizListRetroCh3 = [quizList copy];
            } break;
              
-           case NumNaoQuizModeRetroCh5: {
+           case NumLaiQuizMode3: {
              self.xmlDataRetroCh5 = [data copy];
              self.quizListRetroCh5 = [quizList copy];
            } break;
              
-           case NumNaoQuizModeRetroCh7: {
+           case NumLaiQuizMode4: {
              self.xmlDataRetroCh7 = [data copy];
              self.quizListRetroCh7 = [quizList copy];
            } break;
@@ -524,19 +524,19 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
   NSString *urlString = nil;
   
   switch (quizMode) {
-    case NumNaoQuizModeOnAir: {
+    case NumLaiQuizMode1: {
       urlString = @"http://quiz.thechappters.com/webservice.php?app_id=2&method=getQuiz&category_id=1";
     } break;
       
-    case NumNaoQuizModeRetroCh3: {
+    case NumLaiQuizMode2: {
       urlString = @"http://quiz.thechappters.com/webservice.php?app_id=2&method=getQuiz&category_id=2";
     } break;
       
-    case NumNaoQuizModeRetroCh5: {
+    case NumLaiQuizMode3: {
       urlString = @"http://quiz.thechappters.com/webservice.php?app_id=2&method=getQuiz&category_id=3";
     } break;
       
-    case NumNaoQuizModeRetroCh7: {
+    case NumLaiQuizMode4: {
       urlString = @"http://quiz.thechappters.com/webservice.php?app_id=2&method=getQuiz&category_id=4";
     } break;
       
@@ -554,7 +554,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
   BOOL quizScoreAvailable = quizScore >= 0;
   
   switch (quizMode) {
-    case NumNaoQuizModeOnAir: {
+    case NumLaiQuizMode1: {
       if (quizScoreAvailable) {
         urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=1&score=%d", quizScore];
       } else {
@@ -562,7 +562,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
       }
     } break;
       
-    case NumNaoQuizModeRetroCh3: {
+    case NumLaiQuizMode2: {
       if (quizScoreAvailable) {
         urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=2&score=%d", quizScore];
       } else {
@@ -570,7 +570,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
       }
     } break;
       
-    case NumNaoQuizModeRetroCh5: {
+    case NumLaiQuizMode3: {
       if (quizScoreAvailable) {
         urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=3&score=%d", quizScore];
       } else {
@@ -578,7 +578,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
       }
     } break;
       
-    case NumNaoQuizModeRetroCh7: {
+    case NumLaiQuizMode4: {
       if (quizScoreAvailable) {
         urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=4&score=%d", quizScore];
       } else {
@@ -784,7 +784,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
 - (void)updateVersionNumberForQuizMode:(NSInteger)quizMode {
   
   switch (quizMode) {
-    case NumNaoQuizModeOnAir: {
+    case NumLaiQuizMode1: {
       if (![self.serverVersionOnAir isEqualToString:QuizDefaultVersion]) {
         [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionOnAir
                                                    forKey:VersionKeyOnAir];
@@ -792,7 +792,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
       }
     } break;
 
-    case NumNaoQuizModeRetroCh3: {
+    case NumLaiQuizMode2: {
       if (![self.serverVersionRetroCh3 isEqualToString:QuizDefaultVersion]) {
         [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionRetroCh3
                                                    forKey:VersionKeyRetroCh3];
@@ -800,7 +800,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
       }
     } break;
 
-    case NumNaoQuizModeRetroCh5: {
+    case NumLaiQuizMode3: {
       if (![self.serverVersionRetroCh5 isEqualToString:QuizDefaultVersion]) {
         [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionRetroCh5
                                                    forKey:VersionKeyRetroCh5];
@@ -808,7 +808,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
       }
     } break;
       
-    case NumNaoQuizModeRetroCh7: {
+    case NumLaiQuizMode4: {
       if (![self.serverVersionRetroCh7 isEqualToString:QuizDefaultVersion]) {
         [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionRetroCh7
                                                    forKey:VersionKeyRetroCh7];

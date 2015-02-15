@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="UFc-lW-Fb6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="UFc-lW-Fb6">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -162,8 +162,8 @@
                                     <constraint firstAttribute="height" constant="56" id="VN7-ga-QOH"/>
                                     <constraint firstAttribute="width" constant="240" id="YUB-FN-WiD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="ละคร On Air"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="เพลงฮิตติดชาร์ท"/>
                                 <connections>
                                     <action selector="goToQuiz:" destination="vCd-qs-oWe" eventType="touchUpInside" id="pXw-ix-dp8"/>
                                 </connections>
@@ -175,8 +175,8 @@
                                     <constraint firstAttribute="height" constant="56" id="GQN-hI-v5U"/>
                                     <constraint firstAttribute="width" constant="240" id="P1q-v3-WaQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="ละครเก่าช่อง 3">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="เพลงประกอบละคร">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -191,8 +191,8 @@
                                     <constraint firstAttribute="width" constant="240" id="BPz-BP-DvT"/>
                                     <constraint firstAttribute="height" constant="56" id="Ddg-cf-CWq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="ละครเก่าช่อง 5">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="เพลงยุคไนนตี้ 90s">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -207,8 +207,8 @@
                                     <constraint firstAttribute="height" constant="56" id="E0r-cv-6Gl"/>
                                     <constraint firstAttribute="width" constant="240" id="Krs-ny-And"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="ละครเก่าช่อง 7">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="เพลงเพราะหน้า B">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
