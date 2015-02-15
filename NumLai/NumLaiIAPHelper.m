@@ -9,18 +9,18 @@
 #import "NumLaiIAPHelper.h"
 
 @implementation NumLaiIAPHelper
-@synthesize retroCh3Purchased = _retroCh3Purchased;
-@synthesize retroCh5Purchased = _retroCh5Purchased;
-@synthesize retroCh7Purchased = _retroCh7Purchased;
+@synthesize quizMode2Purchased = _quizMode2Purchased;
+@synthesize quizMode3Purchased = _quizMode3Purchased;
+@synthesize quizMode4Purchased = _quizMode4Purchased;
 
 + (NumLaiIAPHelper *)sharedInstance {
   static dispatch_once_t once;
   static NumLaiIAPHelper *sharedInstance;
   dispatch_once(&once, ^{
     NSArray *productsArray = [NSArray arrayWithObjects:
-                              @"com.thechappters.NumNao.retroch3",
-                              @"com.thechappters.NumNao.retroch5",
-                              @"com.thechappters.NumNao.retroch7",
+                              @"com.thechappters.NumLai.quizMode2",
+                              @"com.thechappters.NumLai.quizMode3",
+                              @"com.thechappters.NumLai.quizMode4",
                               nil];
     NSSet *productIdentifiers = [NSSet setWithArray:productsArray];
     sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
@@ -29,42 +29,42 @@
   return sharedInstance;
 }
 
-- (void)setRetroCh3Purchased:(BOOL)flag {
+- (void)setQuizMode2Purchased:(BOOL)flag {
   if (flag) {
     [self provideContentForProductIdentifier:self.productIdentifiers[0] fireNotification:YES];
   }
-  self->_retroCh3Purchased = flag;
+  self->_quizMode2Purchased = flag;
 }
 
-- (BOOL)isRetroCh3Purchased {
+- (BOOL)isQuizMode2Purchased {
   BOOL flag = [self productPurchased:self.productIdentifiers[0]];
-  self->_retroCh3Purchased = flag;
-  return self->_retroCh3Purchased;
+  self->_quizMode2Purchased = flag;
+  return self->_quizMode2Purchased;
 }
 
-- (void)setRetroCh5Purchased:(BOOL)flag {
+- (void)setQuizMode3Purchased:(BOOL)flag {
   if (flag) {
     [self provideContentForProductIdentifier:self.productIdentifiers[1] fireNotification:YES];
   }
-  self->_retroCh5Purchased = flag;
+  self->_quizMode3Purchased = flag;
 }
 
-- (BOOL)isRetroCh5Purchased {
+- (BOOL)isQuizMode3Purchased {
   BOOL flag = [self productPurchased:self.productIdentifiers[1]];
-  self->_retroCh5Purchased = flag;
-  return self->_retroCh5Purchased;
+  self->_quizMode3Purchased = flag;
+  return self->_quizMode3Purchased;
 }
 
-- (void)setRetroCh7Purchased:(BOOL)flag {
+- (void)setQuizMode4Purchased:(BOOL)flag {
   if (flag) {
     [self provideContentForProductIdentifier:self.productIdentifiers[2] fireNotification:YES];
   }
-  self->_retroCh7Purchased = flag;
+  self->_quizMode4Purchased = flag;
 }
 
-- (BOOL)isRetroCh7Purchased {
+- (BOOL)isQuizMode4Purchased {
   BOOL flag = [self productPurchased:self.productIdentifiers[2]];
-  self->_retroCh7Purchased = flag;
-  return self->_retroCh7Purchased;
+  self->_quizMode4Purchased = flag;
+  return self->_quizMode4Purchased;
 }
 @end

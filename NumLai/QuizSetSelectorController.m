@@ -106,7 +106,7 @@
                                               [alert show];
                                             }];
   
-  __block float yPos = self.onAirButton.frame.origin.y +  self.onAirButton.frame.size.height + 10;
+  __block float yPos = self.quizMode1Button.frame.origin.y +  self.quizMode1Button.frame.size.height + 10;
   self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(0, yPos, GAD_SIZE_320x50.width, GAD_SIZE_320x50.height)];
 
   self.bannerView.adUnitID = MyAdUnitID_Banner;
@@ -121,7 +121,7 @@
 }
 
 - (void)refreshNewQuizLabel {
-  float currentSize = self.onAirNewQuizLabel.font.pointSize;
+  float currentSize = self.quizMode1NewQuizLabel.font.pointSize;
   float minSize = 7;
   float maxSize = 22;
   float newSize;
@@ -137,10 +137,10 @@
   if (newSize <= minSize) {
     self.quizLabelAnimationGoForward = YES;
   }
-  [self.onAirNewQuizLabel setFont:[UIFont systemFontOfSize:newSize]];
-  [self.retroCh3NewQuizLabel setFont:[UIFont systemFontOfSize:newSize]];
-  [self.retroCh5NewQuizLabel setFont:[UIFont systemFontOfSize:newSize]];
-  [self.retroCh7NewQuizLabel setFont:[UIFont systemFontOfSize:newSize]];
+  [self.quizMode1NewQuizLabel setFont:[UIFont systemFontOfSize:newSize]];
+  [self.quizMode2NewQuizLabel setFont:[UIFont systemFontOfSize:newSize]];
+  [self.quizMode3NewQuizLabel setFont:[UIFont systemFontOfSize:newSize]];
+  [self.quizMode4NewQuizLabel setFont:[UIFont systemFontOfSize:newSize]];
 }
 
 - (void)setUpAudioPlayer {
@@ -190,7 +190,7 @@
 }
 
 - (void)adViewDidReceiveAd:(GADBannerView *)adView {
-  __block float yPos = self.onAirButton.frame.origin.y + self.onAirButton.frame.size.height + 10;
+  __block float yPos = self.quizMode1Button.frame.origin.y + self.quizMode1Button.frame.size.height + 10;
   [UIView animateWithDuration:0 animations:^{
     adView.frame = CGRectMake(0.0, yPos, adView.frame.size.width, adView.frame.size.height);
   }];
@@ -275,7 +275,7 @@
   if (tag == 0) {
     
     // Mode: ON AIR
-    if (IAPInstance.retroCh3Purchased) {
+    if (IAPInstance.quizMode2Purchased) {
       [self goToQuizDetail:NumLaiQuizMode1];
     } else {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
@@ -289,8 +289,8 @@
   } else if (tag == 1){
     
     // Mode: Retro CH 3
-    if (IAPInstance.retroCh3Purchased) {
-      if (IAPInstance.retroCh5Purchased) {
+    if (IAPInstance.quizMode2Purchased) {
+      if (IAPInstance.quizMode3Purchased) {
         [self goToQuizDetail:NumLaiQuizMode2];
       } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
@@ -314,8 +314,8 @@
   } else if (tag == 2){
     
     // Mode: Retro CH 5
-    if (IAPInstance.retroCh5Purchased) {
-      if (IAPInstance.retroCh7Purchased) {
+    if (IAPInstance.quizMode3Purchased) {
+      if (IAPInstance.quizMode4Purchased) {
         [self goToQuizDetail:NumLaiQuizMode3];
       } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
@@ -338,7 +338,7 @@
   } else if (tag == 3){
     
     // Mode: Retro CH 7
-    if (IAPInstance.retroCh7Purchased) {
+    if (IAPInstance.quizMode4Purchased) {
       [self goToQuizDetail:NumLaiQuizMode4];
     } else {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
@@ -379,47 +379,47 @@
 }
 
 - (void)renderNewQuizLabel {
-  [self.onAirNewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewOnAirAvailable];
-  [self.retroCh3NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewRetroCh3Available];
-  [self.retroCh5NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewRetroCh5Available];
-  [self.retroCh7NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewRetroCh7Available];
+  [self.quizMode1NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewOnAirAvailable];
+  [self.quizMode2NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewRetroCh3Available];
+  [self.quizMode3NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewRetroCh5Available];
+  [self.quizMode4NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewRetroCh7Available];
 }
 
 - (void)renderLockIcon {
   NumLaiIAPHelper *IAPinstance = [NumLaiIAPHelper sharedInstance];
 
-  BOOL isRetroCH3Purchased = IAPinstance.retroCh3Purchased;
-  BOOL isRetroCH5Purchased = IAPinstance.retroCh5Purchased;
-  BOOL isRetroCH7Purchased = IAPinstance.retroCh7Purchased;
+  BOOL isRetroCH3Purchased = IAPinstance.quizMode2Purchased;
+  BOOL isRetroCH5Purchased = IAPinstance.quizMode3Purchased;
+  BOOL isRetroCH7Purchased = IAPinstance.quizMode4Purchased;
   
   if (isRetroCH3Purchased) {
-    self.retroCh3LockImageView.image = nil;
+    self.quizMode2LockImageView.image = nil;
   } else {
-    self.retroCh3LockImageView.image = [UIImage imageNamed:@"blue_lock_icon"];
+    self.quizMode2LockImageView.image = [UIImage imageNamed:@"blue_lock_icon"];
   }
   
   if (isRetroCH5Purchased) {
-    self.retroCh5LockImageView.image = nil;
+    self.quizMode3LockImageView.image = nil;
   } else {
-    self.retroCh5LockImageView.image = [UIImage imageNamed:@"blue_lock_icon"];
+    self.quizMode3LockImageView.image = [UIImage imageNamed:@"blue_lock_icon"];
   }
   
   if (isRetroCH7Purchased) {
-    self.retroCh7LockImageView.image = nil;
+    self.quizMode4LockImageView.image = nil;
   } else {
-    self.retroCh7LockImageView.image = [UIImage imageNamed:@"blue_lock_icon"];
+    self.quizMode4LockImageView.image = [UIImage imageNamed:@"blue_lock_icon"];
   }
 }
 
 - (void)lockAllButtons:(BOOL)flag {
-  self.onAirButton.enabled = !flag;
-  self.retroCh3Button.enabled = !flag;
-  self.retroCh5Button.enabled = !flag;
-  self.retroCh7Button.enabled = !flag;
+  self.quizMode1Button.enabled = !flag;
+  self.quizMode2Button.enabled = !flag;
+  self.quizMode3Button.enabled = !flag;
+  self.quizMode4Button.enabled = !flag;
 }
 
 - (void)decorateAllButtons {
-  NSArray *gameModeButtons = [NSArray arrayWithObjects: self.onAirButton, self.retroCh3Button, self.retroCh5Button, self.retroCh7Button, self.restorePurchaseButton, nil];
+  NSArray *gameModeButtons = [NSArray arrayWithObjects: self.quizMode1Button, self.quizMode2Button, self.quizMode3Button, self.quizMode4Button, self.restorePurchaseButton, nil];
   
   for(UIButton *btn in gameModeButtons)
   {
@@ -456,9 +456,9 @@
     
   }
   
-  NSArray *allQuizLabels = [NSArray arrayWithObjects: self.onAirNewQuizLabel,
-                            self.retroCh3NewQuizLabel, self.retroCh5NewQuizLabel,
-                            self.retroCh7NewQuizLabel, nil];
+  NSArray *allQuizLabels = [NSArray arrayWithObjects: self.quizMode1NewQuizLabel,
+                            self.quizMode2NewQuizLabel, self.quizMode3NewQuizLabel,
+                            self.quizMode4NewQuizLabel, nil];
   for (UILabel *label in allQuizLabels) {
     // Round label corners
     CALayer *labelLayer = [label layer];

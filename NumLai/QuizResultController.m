@@ -81,9 +81,7 @@ NSInteger const PlayerNameMaxLength = 40;
   self.needSubmitScore = NO;
   
   NSInteger currentPlayCount = [self getPlayCount];
-  NSLog(@"x1=%d",currentPlayCount);
   currentPlayCount++;
-  NSLog(@"x2=%d",currentPlayCount);
   [self savePlayCount:currentPlayCount];
   
   self.allowShowRateAppAlert = YES;
@@ -240,8 +238,8 @@ NSInteger const PlayerNameMaxLength = 40;
     switch (self.quizMode) {
       case NumLaiQuizMode1: {
         // Mode: On air
-        if (!IAPInstance.retroCh3Purchased) {
-          IAPInstance.retroCh3Purchased = YES;
+        if (!IAPInstance.quizMode2Purchased) {
+          IAPInstance.quizMode2Purchased = YES;
           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ยินดีด้วย !!"
                                                           message:@"เธอปลดล๊อดโหมดเพลงประกอบละคร ได้สำเร็จแล้ว !!"
                                                          delegate:nil
@@ -253,8 +251,8 @@ NSInteger const PlayerNameMaxLength = 40;
       
       case NumLaiQuizMode2: {
         // Mode: Retro CH 3
-        if (!IAPInstance.retroCh5Purchased) {
-          IAPInstance.retroCh5Purchased = YES;
+        if (!IAPInstance.quizMode3Purchased) {
+          IAPInstance.quizMode3Purchased = YES;
           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ยินดีด้วย !!"
                                                           message:@"เธอปลดล๊อดโหมดเพลงยุคไนนตี้ 90s ได้สำเร็จแล้ว !!"
                                                          delegate:nil
@@ -266,8 +264,8 @@ NSInteger const PlayerNameMaxLength = 40;
         
       case NumLaiQuizMode3: {
         // Mode: Retro CH 5
-        if (!IAPInstance.retroCh7Purchased) {
-          IAPInstance.retroCh7Purchased = YES;
+        if (!IAPInstance.quizMode4Purchased) {
+          IAPInstance.quizMode4Purchased = YES;
           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ยินดีด้วย !!"
                                                           message:@"เธอปลดล๊อดโหมดเพลงเพราะหน้า B ได้สำเร็จแล้ว !!"
                                                          delegate:nil

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="UFc-lW-Fb6">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -326,18 +325,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="hZp-FL-7Ly"/>
                     <connections>
-                        <outlet property="onAirButton" destination="IZV-BM-Zna" id="PEz-kq-YEV"/>
-                        <outlet property="onAirNewQuizLabel" destination="Fep-RS-yeo" id="7WO-Wj-sgW"/>
+                        <outlet property="quizMode1Button" destination="IZV-BM-Zna" id="PeN-av-oou"/>
+                        <outlet property="quizMode1NewQuizLabel" destination="Fep-RS-yeo" id="OBY-K7-00R"/>
+                        <outlet property="quizMode2Button" destination="MWB-IF-G0y" id="4H9-2p-8lm"/>
+                        <outlet property="quizMode2LockImageView" destination="X0m-aL-boN" id="0EI-gH-cME"/>
+                        <outlet property="quizMode2NewQuizLabel" destination="1vO-U1-3vx" id="CkG-in-iId"/>
+                        <outlet property="quizMode3Button" destination="7WN-xd-FAD" id="O4f-e6-VWW"/>
+                        <outlet property="quizMode3LockImageView" destination="tP4-J1-f3X" id="rYP-S2-KLg"/>
+                        <outlet property="quizMode3NewQuizLabel" destination="qyg-Dl-mVi" id="k3k-Gi-x43"/>
+                        <outlet property="quizMode4Button" destination="KoS-f9-oVa" id="UgD-aP-j3k"/>
+                        <outlet property="quizMode4LockImageView" destination="2gw-yE-53f" id="Xws-FN-ve4"/>
+                        <outlet property="quizMode4NewQuizLabel" destination="dYJ-PJ-AbW" id="pgH-7I-ubE"/>
                         <outlet property="restorePurchaseButton" destination="Mqs-xo-zcV" id="vsQ-Hx-pK0"/>
-                        <outlet property="retroCh3Button" destination="MWB-IF-G0y" id="w1H-ZZ-UTa"/>
-                        <outlet property="retroCh3LockImageView" destination="X0m-aL-boN" id="PSs-Iv-tGo"/>
-                        <outlet property="retroCh3NewQuizLabel" destination="1vO-U1-3vx" id="T1b-dP-Egh"/>
-                        <outlet property="retroCh5Button" destination="7WN-xd-FAD" id="TXw-cB-0qS"/>
-                        <outlet property="retroCh5LockImageView" destination="tP4-J1-f3X" id="5jh-l3-c8m"/>
-                        <outlet property="retroCh5NewQuizLabel" destination="qyg-Dl-mVi" id="mT3-Jp-aqj"/>
-                        <outlet property="retroCh7Button" destination="KoS-f9-oVa" id="0Lo-JV-bkb"/>
-                        <outlet property="retroCh7LockImageView" destination="2gw-yE-53f" id="gFg-ir-QpS"/>
-                        <outlet property="retroCh7NewQuizLabel" destination="dYJ-PJ-AbW" id="VgN-Io-Ldt"/>
                         <segue destination="JmQ-NW-qLw" kind="push" id="hpL-Yx-lTW"/>
                     </connections>
                 </viewController>

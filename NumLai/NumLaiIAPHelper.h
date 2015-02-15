@@ -11,9 +11,9 @@
 @interface NumLaiIAPHelper : IAPHelper
 
 @property (strong, nonatomic) NSArray *productIdentifiers;
-@property (assign, nonatomic, getter = isRetroCh3Purchased) BOOL retroCh3Purchased;
-@property (assign, nonatomic, getter = isRetroCh5Purchased) BOOL retroCh5Purchased;
-@property (assign, nonatomic, getter = isRetroCh7Purchased) BOOL retroCh7Purchased;
+@property (assign, nonatomic, getter = isQuizMode2Purchased) BOOL quizMode2Purchased;
+@property (assign, nonatomic, getter = isQuizMode3Purchased) BOOL quizMode3Purchased;
+@property (assign, nonatomic, getter = isQuizMode4Purchased) BOOL quizMode4Purchased;
 
 + (NumLaiIAPHelper *)sharedInstance;
 

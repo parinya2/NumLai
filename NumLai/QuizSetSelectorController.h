@@ -14,20 +14,20 @@
 }
 
 
-@property (strong, nonatomic) IBOutlet UIButton *onAirButton;
-@property (strong, nonatomic) IBOutlet UIButton *retroCh3Button;
-@property (strong, nonatomic) IBOutlet UIButton *retroCh5Button;
-@property (strong, nonatomic) IBOutlet UIButton *retroCh7Button;
+@property (strong, nonatomic) IBOutlet UIButton *quizMode1Button;
+@property (strong, nonatomic) IBOutlet UIButton *quizMode2Button;
+@property (strong, nonatomic) IBOutlet UIButton *quizMode3Button;
+@property (strong, nonatomic) IBOutlet UIButton *quizMode4Button;
 @property (strong, nonatomic) IBOutlet UIButton *restorePurchaseButton;
 
-@property (strong, nonatomic) IBOutlet UIImageView *retroCh3LockImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *retroCh5LockImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *retroCh7LockImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *quizMode2LockImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *quizMode3LockImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *quizMode4LockImageView;
 
-@property (strong, nonatomic) IBOutlet UILabel *onAirNewQuizLabel;
-@property (strong, nonatomic) IBOutlet UILabel *retroCh3NewQuizLabel;
-@property (strong, nonatomic) IBOutlet UILabel *retroCh5NewQuizLabel;
-@property (strong, nonatomic) IBOutlet UILabel *retroCh7NewQuizLabel;
+@property (strong, nonatomic) IBOutlet UILabel *quizMode1NewQuizLabel;
+@property (strong, nonatomic) IBOutlet UILabel *quizMode2NewQuizLabel;
+@property (strong, nonatomic) IBOutlet UILabel *quizMode3NewQuizLabel;
+@property (strong, nonatomic) IBOutlet UILabel *quizMode4NewQuizLabel;
 
 @property (strong, nonatomic) GADBannerView *bannerView;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
