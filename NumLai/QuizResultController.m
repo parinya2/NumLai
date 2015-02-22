@@ -22,7 +22,7 @@
 NSString * const PlayCountKey = @"PlayCountKey";
 NSString * const RateAppisVisitedKey = @"RateAppIsVisited";
 NSInteger const PlayCountForAlert = 10;
-NSInteger const PlayCountForInterstitial = 4;
+NSInteger const PlayCountForInterstitial = 3;
 NSInteger const PlayerNameMaxLength = 40;
 
 @interface QuizResultController ()

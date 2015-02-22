@@ -379,10 +379,10 @@
 }
 
 - (void)renderNewQuizLabel {
-  [self.quizMode1NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewOnAirAvailable];
-  [self.quizMode2NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewRetroCh3Available];
-  [self.quizMode3NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewRetroCh5Available];
-  [self.quizMode4NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewRetroCh7Available];
+  [self.quizMode1NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewMode1Available];
+  [self.quizMode2NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewMode2Available];
+  [self.quizMode3NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewMode3Available];
+  [self.quizMode4NewQuizLabel setHidden:![QuizManager sharedInstance].isTheNewMode4Available];
 }
 
 - (void)renderLockIcon {

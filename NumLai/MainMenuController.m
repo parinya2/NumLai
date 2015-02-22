@@ -42,12 +42,27 @@
   [self setUpAudioPlayer];
   [self decorateAllButtons];
   self.navigationController.navigationBarHidden = YES;
+  [self randomBG];
+  
 /*  self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(0.0, 80.0, GAD_SIZE_320x50.width, GAD_SIZE_320x50.height)];
   self.bannerView.adUnitID = MyAdUnitID;
   self.bannerView.delegate = self;
   [self.bannerView setRootViewController:self];
   [self.view addSubview:self.bannerView];
   [self.bannerView loadRequest:[self createRequest]];*/
+}
+
+- (void)randomBG {
+  NSUInteger r = arc4random_uniform(4) + 1;
+  switch (r) {
+    case 1: self.bgImageView.image = [UIImage imageNamed:@"bg5"]; break;
+    case 2: self.bgImageView.image = [UIImage imageNamed:@"bg5-1"]; break;
+    case 3: self.bgImageView.image = [UIImage imageNamed:@"bg5-2"]; break;
+    case 4: self.bgImageView.image = [UIImage imageNamed:@"bg5-3"]; break;
+      
+    default:
+      break;
+  }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -145,9 +160,9 @@
 
 - (IBAction)recommendToFriend:(id)sender {
   SLComposeViewController *fbVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-   [fbVC setInitialText:@"นี่ๆ เธอลองเล่นแอพนี้สิ 'น้ำเน่า' ควิซแอพสุดมันส์บน AppStore ที่รวมคำถามจากละครน้ำเน่าหลังข่าวมาให้ทดสอบฝีมือกัน ถ้าเธอคิดว่าเชี่ยวชาญเรื่องละครหลังข่าวดีแล้ว เราขอท้าให้เธอเล่น 'น้ำเน่า' นะจ๊ะ คิกคิก"];
+   [fbVC setInitialText:@"นี่ๆ เธอลองเล่นแอพนี้สิ 'น้ำลาย' ควิซแอพสุดมันส์บน AppStore ที่รวมคำถามจากเพลงดังมากมายจากอดีตถึงปัจจุบัน มาให้ทดสอบฝีมือกัน ถ้าเธอคิดว่าฟังเพลงมามากแล้ว เราขอท้าให้เธอเล่น 'น้ำลาย' นะจ๊ะ คิกคิก"];
    [fbVC addURL:[NSURL URLWithString:URLNumNaoAppStore]];
-   [fbVC addImage:[UIImage imageNamed:@"bg1"]];
+   [fbVC addImage:[UIImage imageNamed:@"bg5-1"]];
    [self presentViewController:fbVC animated:YES completion:nil];
   
   /*NSString *a = @"test";

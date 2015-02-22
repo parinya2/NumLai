@@ -39,15 +39,15 @@ typedef NS_ENUM(NSInteger, NumLaiQuizMode) {
 @property (strong, nonatomic) NSData *xmlDataQuizResult;
 @property (strong, nonatomic) NSData *xmlDataQuizRank;
 
-@property (assign, nonatomic, getter = isTheNewOnAirAvailable) BOOL theNewOnAirAvailable;
-@property (assign, nonatomic, getter = isTheNewRetroCh3Available) BOOL theNewRetroCh3Available;
-@property (assign, nonatomic, getter = isTheNewRetroCh5Available) BOOL theNewRetroCh5Available;
-@property (assign, nonatomic, getter = isTheNewRetroCh7Available) BOOL theNewRetroCh7Available;
+@property (assign, nonatomic, getter = isTheNewMode1Available) BOOL theNewMode1Available;
+@property (assign, nonatomic, getter = isTheNewMode2Available) BOOL theNewMode2Available;
+@property (assign, nonatomic, getter = isTheNewMode3Available) BOOL theNewMode3Available;
+@property (assign, nonatomic, getter = isTheNewMode4Available) BOOL theNewMode4Available;
 
-@property (strong, nonatomic) NSString *serverVersionOnAir;
-@property (strong, nonatomic) NSString *serverVersionRetroCh3;
-@property (strong, nonatomic) NSString *serverVersionRetroCh5;
-@property (strong, nonatomic) NSString *serverVersionRetroCh7;
+@property (strong, nonatomic) NSString *serverVersionMode1;
+@property (strong, nonatomic) NSString *serverVersionMode2;
+@property (strong, nonatomic) NSString *serverVersionMode3;
+@property (strong, nonatomic) NSString *serverVersionMode4;
 
 - (NSArray *)mockQuizList;
 - (NSString *)quizResultStringForScore:(NSInteger)quizScore;

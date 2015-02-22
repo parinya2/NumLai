@@ -16,14 +16,14 @@ NSString * const QuizManagerDidLoadQuizSuccess = @"QuizManagerDidLoadQuizSuccess
 NSString * const QuizManagerDidLoadQuizFail = @"QuizManagerDidLoadQuizFail";
 NSString * const QuizManagerDidLoadQuizRankSuccess = @"QuizManagerDidLoadQuizRankSuccess";
 NSString * const QuizManagerDidLoadQuizRankFail = @"QuizManagerDidLoadQuizRankFail";
-NSString * const VersionKeyOnAir = @"VersionKeyOnAir";
-NSString * const VersionKeyRetroCh3 = @"VersionKeyRetroCh3";
-NSString * const VersionKeyRetroCh5 = @"VersionKeyRetroCh5";
-NSString * const VersionKeyRetroCh7 = @"VersionKeyRetroCh7";
+NSString * const VersionKeyMode1 = @"VersionKeyOnAir";
+NSString * const VersionKeyMode2 = @"VersionKeyRetroCh3";
+NSString * const VersionKeyMode3 = @"VersionKeyRetroCh5";
+NSString * const VersionKeyMode4 = @"VersionKeyRetroCh7";
 NSString * const DeviceTokenSentKey = @"DeviceTokenSent";
 NSString * const QuizDefaultVersion = @"QuizDefaultVersion";
-NSString * const PlaynerDummyName = @"NumNaoPlayerDummyName";
-NSString * const URLNumNaoAppStore = @"https://itunes.apple.com/th/app/id903714798?mt=8";
+NSString * const PlaynerDummyName = @"NumLaiPlayerDummyName";
+NSString * const URLNumNaoAppStore = @"https://itunes.apple.com/th/app/id967761287?mt=8";
 NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
 //NSString * const URLNumNaoAppStore = @"http://bit.ly/numnao";
 //NSString * const URLNumNaoFacebookPage = @"http://bit.ly/thechappters";
@@ -496,10 +496,10 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
   TBXML *tbxml = [TBXML newTBXMLWithXMLString:xmlString error:&error];
   TBXMLElement *rootXMLElement = tbxml.rootXMLElement;
 
-  self.serverVersionOnAir = QuizDefaultVersion;
-  self.serverVersionRetroCh3 = QuizDefaultVersion;
-  self.serverVersionRetroCh5 = QuizDefaultVersion;
-  self.serverVersionRetroCh7 = QuizDefaultVersion;
+  self.serverVersionMode1 = QuizDefaultVersion;
+  self.serverVersionMode2 = QuizDefaultVersion;
+  self.serverVersionMode3 = QuizDefaultVersion;
+  self.serverVersionMode4 = QuizDefaultVersion;
   
   if (rootXMLElement) {
     TBXMLElement *childXMLElement = [TBXML childElementNamed:@"version" parentElement:rootXMLElement];
@@ -507,13 +507,13 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
       NSString *quizGroupId = [TBXML valueOfAttributeNamed:@"quiz_group_id" forElement:childXMLElement];
       NSString *quizVersion = [TBXML valueOfAttributeNamed:@"no" forElement:childXMLElement];
       if ([quizGroupId isEqualToString:@"1"]) {
-        self.serverVersionOnAir = quizVersion;
+        self.serverVersionMode1 = quizVersion;
       } else if ([quizGroupId isEqualToString:@"2"]) {
-        self.serverVersionRetroCh3 = quizVersion;
+        self.serverVersionMode2 = quizVersion;
       } else if ([quizGroupId isEqualToString:@"3"]) {
-        self.serverVersionRetroCh5 = quizVersion;
+        self.serverVersionMode3 = quizVersion;
       } else if ([quizGroupId isEqualToString:@"4"]) {
-        self.serverVersionRetroCh7 = quizVersion;
+        self.serverVersionMode4 = quizVersion;
       }
       childXMLElement = childXMLElement->nextSibling;
     }
@@ -715,10 +715,10 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
      if (error) {
        NSLog(@"CheckQuizUpdateWithServer error %@",error.localizedDescription);
        
-       self.serverVersionOnAir = QuizDefaultVersion;
-       self.serverVersionRetroCh3 = QuizDefaultVersion;
-       self.serverVersionRetroCh5 = QuizDefaultVersion;
-       self.serverVersionRetroCh7 = QuizDefaultVersion;
+       self.serverVersionMode1 = QuizDefaultVersion;
+       self.serverVersionMode2 = QuizDefaultVersion;
+       self.serverVersionMode3 = QuizDefaultVersion;
+       self.serverVersionMode4 = QuizDefaultVersion;
      } else {
        [self extractQuizVersionFromXMLdata:data];
        NSLog(@"CheckQuizUpdateWithServer success");
@@ -726,92 +726,92 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
    }];
 }
 
-- (BOOL)isTheNewOnAirAvailable {
+- (BOOL)isTheNewMode1Available {
   BOOL flag = NO;
   NSString *currentVersion = [[NSUserDefaults standardUserDefaults]
-                              stringForKey:VersionKeyOnAir];
-  if ([self.serverVersionOnAir isEqualToString:QuizDefaultVersion]) {
+                              stringForKey:VersionKeyMode1];
+  if ([self.serverVersionMode1 isEqualToString:QuizDefaultVersion]) {
     flag = NO;
   } else {
-    flag = ![currentVersion isEqualToString:self.serverVersionOnAir];
+    flag = ![currentVersion isEqualToString:self.serverVersionMode1];
   }
 
-  self->_theNewOnAirAvailable = flag;
-  return self->_theNewOnAirAvailable;
+  self->_theNewMode1Available = flag;
+  return self->_theNewMode1Available;
 }
 
-- (BOOL)isTheNewRetroCh3Available {
+- (BOOL)isTheNewMode2Available {
   BOOL flag = NO;
   NSString *currentVersion = [[NSUserDefaults standardUserDefaults]
-                              stringForKey:VersionKeyRetroCh3];
-  if ([self.serverVersionRetroCh3 isEqualToString:QuizDefaultVersion]) {
+                              stringForKey:VersionKeyMode2];
+  if ([self.serverVersionMode2 isEqualToString:QuizDefaultVersion]) {
     flag = NO;
   } else {
-    flag = ![currentVersion isEqualToString:self.serverVersionRetroCh3];
+    flag = ![currentVersion isEqualToString:self.serverVersionMode2];
   }
-  self->_theNewRetroCh3Available = flag;
-  return self->_theNewRetroCh3Available;
+  self->_theNewMode2Available = flag;
+  return self->_theNewMode2Available;
 }
 
-- (BOOL)isTheNewRetroCh5Available {
+- (BOOL)isTheNewMode3Available {
   BOOL flag = NO;
   NSString *currentVersion = [[NSUserDefaults standardUserDefaults]
-                              stringForKey:VersionKeyRetroCh5];
-  if ([self.serverVersionRetroCh5 isEqualToString:QuizDefaultVersion]) {
+                              stringForKey:VersionKeyMode3];
+  if ([self.serverVersionMode3 isEqualToString:QuizDefaultVersion]) {
     flag = NO;
   } else {
-    flag = ![currentVersion isEqualToString:self.serverVersionRetroCh5];
+    flag = ![currentVersion isEqualToString:self.serverVersionMode3];
   }
   
-  self->_theNewRetroCh5Available = flag;
-  return self->_theNewRetroCh5Available;
+  self->_theNewMode3Available = flag;
+  return self->_theNewMode3Available;
 }
 
-- (BOOL)isTheNewRetroCh7Available {
+- (BOOL)isTheNewMode4Available {
   BOOL flag = NO;
   NSString *currentVersion = [[NSUserDefaults standardUserDefaults]
-                              stringForKey:VersionKeyRetroCh7];
-  if ([self.serverVersionRetroCh7 isEqualToString:QuizDefaultVersion]) {
+                              stringForKey:VersionKeyMode4];
+  if ([self.serverVersionMode4 isEqualToString:QuizDefaultVersion]) {
     flag = NO;
   } else {
-    flag = ![currentVersion isEqualToString:self.serverVersionRetroCh7];
+    flag = ![currentVersion isEqualToString:self.serverVersionMode4];
   }
   
-  self->_theNewRetroCh7Available = flag;
-  return self->_theNewRetroCh7Available;
+  self->_theNewMode4Available = flag;
+  return self->_theNewMode4Available;
 }
 
 - (void)updateVersionNumberForQuizMode:(NSInteger)quizMode {
   
   switch (quizMode) {
     case NumLaiQuizMode1: {
-      if (![self.serverVersionOnAir isEqualToString:QuizDefaultVersion]) {
-        [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionOnAir
-                                                   forKey:VersionKeyOnAir];
+      if (![self.serverVersionMode1 isEqualToString:QuizDefaultVersion]) {
+        [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionMode1
+                                                   forKey:VersionKeyMode1];
         [[NSUserDefaults standardUserDefaults] synchronize];
       }
     } break;
 
     case NumLaiQuizMode2: {
-      if (![self.serverVersionRetroCh3 isEqualToString:QuizDefaultVersion]) {
-        [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionRetroCh3
-                                                   forKey:VersionKeyRetroCh3];
+      if (![self.serverVersionMode2 isEqualToString:QuizDefaultVersion]) {
+        [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionMode2
+                                                   forKey:VersionKeyMode2];
         [[NSUserDefaults standardUserDefaults] synchronize];
       }
     } break;
 
     case NumLaiQuizMode3: {
-      if (![self.serverVersionRetroCh5 isEqualToString:QuizDefaultVersion]) {
-        [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionRetroCh5
-                                                   forKey:VersionKeyRetroCh5];
+      if (![self.serverVersionMode3 isEqualToString:QuizDefaultVersion]) {
+        [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionMode3
+                                                   forKey:VersionKeyMode3];
         [[NSUserDefaults standardUserDefaults] synchronize];
       }
     } break;
       
     case NumLaiQuizMode4: {
-      if (![self.serverVersionRetroCh7 isEqualToString:QuizDefaultVersion]) {
-        [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionRetroCh7
-                                                   forKey:VersionKeyRetroCh7];
+      if (![self.serverVersionMode4 isEqualToString:QuizDefaultVersion]) {
+        [[NSUserDefaults standardUserDefaults] setObject:self.serverVersionMode4
+                                                   forKey:VersionKeyMode4];
         [[NSUserDefaults standardUserDefaults] synchronize];
       }
     } break;
