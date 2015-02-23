@@ -109,7 +109,7 @@
   __block float yPos = self.quizMode1Button.frame.origin.y +  self.quizMode1Button.frame.size.height + 10;
   self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(0, yPos, GAD_SIZE_320x50.width, GAD_SIZE_320x50.height)];
 
-  self.bannerView.adUnitID = MyAdUnitID_Banner;
+  self.bannerView.adUnitID = MyAdUnitID_Banner_1;
   self.bannerView.delegate = self;
   [self.bannerView setRootViewController:self];
   [self.view addSubview:self.bannerView];

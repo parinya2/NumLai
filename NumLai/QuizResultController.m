@@ -64,7 +64,7 @@ NSInteger const PlayerNameMaxLength = 40;
   // Banner Ads
   float yPos = self.backToMenuButton.frame.origin.y + self.backToMenuButton.frame.size.height + 5;
   self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(0.0, yPos, GAD_SIZE_320x50.width, GAD_SIZE_320x50.height)];
-  self.bannerView.adUnitID = MyAdUnitID_Banner;
+  self.bannerView.adUnitID = MyAdUnitID_Banner_3;
   self.bannerView.delegate = self;
   [self.bannerView setRootViewController:self];
   [self.view addSubview:self.bannerView];
