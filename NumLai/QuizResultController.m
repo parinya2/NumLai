@@ -107,7 +107,7 @@ NSInteger const PlayerNameMaxLength = 40;
   }
   self.quizResultLevel = [[QuizManager sharedInstance] quizResultLevelForScore:self.quizScore];
   [self.quizResultLabel setText:self.quizResultText];
-  self.quizScoreLabel.text = [NSString stringWithFormat:@"%d", self.quizScore];
+  self.quizScoreLabel.text = [NSString stringWithFormat:@"%zd", self.quizScore];
   [self.quizScoreStaticLabel setHidden:NO];
   
   self.quizRankButtonTimer = [NSTimer scheduledTimerWithTimeInterval:0.03
@@ -120,7 +120,7 @@ NSInteger const PlayerNameMaxLength = 40;
   NSInteger currentPlayCount = [self getPlayCount];
   if (currentPlayCount % PlayCountForAlert == 0 && ![self getRateAppisVisited] && self.allowShowRateAppAlert) {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"สวัสดีจ้ะ"
-                                                    message:@"ขอโทษที่ขัดจังหวะนะจ๊ะ แต่ว่ารบกวนเธอช่วยเข้าไปให้คะแนนแอพน้ำเน่าบน AppStore หน่อยได้มั้ยอ่า แบบว่าเค้าอยากได้ 5 ดาวอ่ะ >_<'  ขอบคุณมากเลยนะจ๊ะ "
+                                                    message:@"ขอโทษที่ขัดจังหวะนะจ๊ะ แต่ว่ารบกวนเธอช่วยเข้าไปให้คะแนนแอพน้ำลายบน AppStore หน่อยได้มั้ยอ่า แบบว่าเค้าอยากได้ 5 ดาวอ่ะ >_<'  ขอบคุณมากเลยนะจ๊ะ "
                                                    delegate:self
                                           cancelButtonTitle:@"ไม่ล่ะฮะ"
                                           otherButtonTitles:@"ตกลงจ้ะ",nil];
@@ -333,7 +333,7 @@ NSInteger const PlayerNameMaxLength = 40;
 - (IBAction)playAgain:(id)sender {
   
   NSInteger currentPlayCount = [self getPlayCount];
-  NSLog(@"y=%d",currentPlayCount);
+  NSLog(@"y=%zd",currentPlayCount);
   if (currentPlayCount % PlayCountForInterstitial == 0 && [self.interstitial isReady]) {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"สวัสดีจ้ะ"
                                                     message:@"คือว่า เราขออนุญาตโชว์โฆษณานิดนึงนะจ๊ะ อย่าโกรธเราน้าาา >_<"
@@ -479,8 +479,8 @@ NSInteger const PlayerNameMaxLength = 40;
 - (IBAction)shareLinkWithShareDialog
 {
  
-  NSString *scoreStr = [NSString stringWithFormat:@"คุณได้ %d คะแนน (ความน้ำเน่าระดับ %d)", self.quizScore, self.quizResultLevel];
-  NSString *pictureURL = [NSString stringWithFormat:@"http://quiz.thechappters.com/images/namnao/result_images/result_%d.jpg",self.quizResultLevel];
+  NSString *scoreStr = [NSString stringWithFormat:@"คุณได้ %zd คะแนน (ความเชี่ยวระดับ %zd)", self.quizScore, self.quizResultLevel];
+  NSString *pictureURL = [NSString stringWithFormat:@"http://quiz.thechappters.com/images/namlai/result_images/result_%zd.jpg",self.quizResultLevel];
   NSString *link = URLNumNaoAppStore;
   
   // Check if the Facebook app is installed and we can present the share dialog

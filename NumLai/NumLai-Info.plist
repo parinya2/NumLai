@@ -25,16 +25,16 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb822576497754371</string>
+				<string>fb995257260547574</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
 	<key>FacebookAppID</key>
-	<string>822576497754371</string>
+	<string>995257260547574</string>
 	<key>FacebookDisplayName</key>
-	<string>น้ำเน่า</string>
+	<string>น้ำลาย</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>

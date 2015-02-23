@@ -16,17 +16,15 @@ NSString * const QuizManagerDidLoadQuizSuccess = @"QuizManagerDidLoadQuizSuccess
 NSString * const QuizManagerDidLoadQuizFail = @"QuizManagerDidLoadQuizFail";
 NSString * const QuizManagerDidLoadQuizRankSuccess = @"QuizManagerDidLoadQuizRankSuccess";
 NSString * const QuizManagerDidLoadQuizRankFail = @"QuizManagerDidLoadQuizRankFail";
-NSString * const VersionKeyMode1 = @"VersionKeyOnAir";
-NSString * const VersionKeyMode2 = @"VersionKeyRetroCh3";
-NSString * const VersionKeyMode3 = @"VersionKeyRetroCh5";
-NSString * const VersionKeyMode4 = @"VersionKeyRetroCh7";
+NSString * const VersionKeyMode1 = @"VersionKeyMode1";
+NSString * const VersionKeyMode2 = @"VersionKeyMode2";
+NSString * const VersionKeyMode3 = @"VersionKeyMode3";
+NSString * const VersionKeyMode4 = @"VersionKeymode4";
 NSString * const DeviceTokenSentKey = @"DeviceTokenSent";
 NSString * const QuizDefaultVersion = @"QuizDefaultVersion";
 NSString * const PlaynerDummyName = @"NumLaiPlayerDummyName";
 NSString * const URLNumNaoAppStore = @"https://itunes.apple.com/th/app/id967761287?mt=8";
 NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
-//NSString * const URLNumNaoAppStore = @"http://bit.ly/numnao";
-//NSString * const URLNumNaoFacebookPage = @"http://bit.ly/thechappters";
 
 
 @implementation QuizManager
@@ -181,25 +179,25 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
   BOOL cacheAvailable = NO;
   switch (quizMode) {
     case NumLaiQuizMode1: {
-      if (self.xmlDataOnAir) {
+      if (self.xmlDataMode1) {
         cacheAvailable = YES;
       }
     } break;
       
     case NumLaiQuizMode2: {
-      if (self.xmlDataRetroCh3) {
+      if (self.xmlDataMode2) {
         cacheAvailable = YES;
       }
     } break;
       
     case NumLaiQuizMode3: {
-      if (self.xmlDataRetroCh5) {
+      if (self.xmlDataMode3) {
         cacheAvailable = YES;
       }
     } break;
       
     case NumLaiQuizMode4: {
-      if (self.xmlDataRetroCh7) {
+      if (self.xmlDataMode4) {
         cacheAvailable = YES;
       }
     } break;
@@ -218,23 +216,23 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
     
     switch (quizMode) {
       case NumLaiQuizMode1: {
-        NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataOnAir];
-        self.quizListOnAir = [quizList copy];
+        NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataMode1];
+        self.quizListMode1 = [quizList copy];
       } break;
         
       case NumLaiQuizMode2: {
-        NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataRetroCh3];
-        self.quizListRetroCh3 = [quizList copy];
+        NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataMode2];
+        self.quizListMode2 = [quizList copy];
       } break;
         
       case NumLaiQuizMode3: {
-        NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataRetroCh5];
-        self.quizListRetroCh5 = [quizList copy];
+        NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataMode3];
+        self.quizListMode3 = [quizList copy];
       } break;
         
       case NumLaiQuizMode4: {
-        NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataRetroCh7];
-        self.quizListRetroCh7 = [quizList copy];
+        NSMutableArray *quizList = [self extractQuizFromXMLdata:self.xmlDataMode4];
+        self.quizListMode4 = [quizList copy];
       } break;
         
       default:
@@ -250,19 +248,19 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
        if (!error) {
          switch (quizMode) {
            case NumLaiQuizMode1: {
-             self.xmlDataOnAir = [data copy];
+             self.xmlDataMode1 = [data copy];
            } break;
              
            case NumLaiQuizMode2: {
-             self.xmlDataRetroCh3 = [data copy];
+             self.xmlDataMode2 = [data copy];
            } break;
              
            case NumLaiQuizMode3: {
-             self.xmlDataRetroCh5 = [data copy];
+             self.xmlDataMode3 = [data copy];
            } break;
              
            case NumLaiQuizMode4: {
-             self.xmlDataRetroCh7 = [data copy];
+             self.xmlDataMode4 = [data copy];
            } break;
              
            default:
@@ -286,23 +284,23 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
          
          switch (quizMode) {
            case NumLaiQuizMode1: {
-             self.xmlDataOnAir = [data copy];
-             self.quizListOnAir = [quizList copy];
+             self.xmlDataMode1 = [data copy];
+             self.quizListMode1 = [quizList copy];
            } break;
              
            case NumLaiQuizMode2: {
-             self.xmlDataRetroCh3 = [data copy];
-             self.quizListRetroCh3 = [quizList copy];
+             self.xmlDataMode2 = [data copy];
+             self.quizListMode2 = [quizList copy];
            } break;
              
            case NumLaiQuizMode3: {
-             self.xmlDataRetroCh5 = [data copy];
-             self.quizListRetroCh5 = [quizList copy];
+             self.xmlDataMode3 = [data copy];
+             self.quizListMode3 = [quizList copy];
            } break;
              
            case NumLaiQuizMode4: {
-             self.xmlDataRetroCh7 = [data copy];
-             self.quizListRetroCh7 = [quizList copy];
+             self.xmlDataMode4 = [data copy];
+             self.quizListMode4 = [quizList copy];
            } break;
              
            default:
@@ -556,7 +554,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
   switch (quizMode) {
     case NumLaiQuizMode1: {
       if (quizScoreAvailable) {
-        urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=1&score=%d", quizScore];
+        urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=1&score=%zd", quizScore];
       } else {
         urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=1"];
       }
@@ -564,7 +562,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
       
     case NumLaiQuizMode2: {
       if (quizScoreAvailable) {
-        urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=2&score=%d", quizScore];
+        urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=2&score=%zd", quizScore];
       } else {
         urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=2"];
       }
@@ -572,7 +570,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
       
     case NumLaiQuizMode3: {
       if (quizScoreAvailable) {
-        urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=3&score=%d", quizScore];
+        urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=3&score=%zd", quizScore];
       } else {
         urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=3"];
       }
@@ -580,7 +578,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
       
     case NumLaiQuizMode4: {
       if (quizScoreAvailable) {
-        urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=4&score=%d", quizScore];
+        urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=4&score=%zd", quizScore];
       } else {
         urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=getRank&category_id=4"];
       }
@@ -599,7 +597,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
   NSMutableArray *result = [[NSMutableArray alloc] init];
   
   for (int i = 0; i < 30; i++) {
-    NSString *quizText = [NSString stringWithFormat:@"Level 1 Question %d", (i+1)];
+    NSString *quizText = [NSString stringWithFormat:@"Level 1 Question %zd", (i+1)];
     QuizObject *obj = [[QuizObject alloc] initWithQuizText:quizText
                                                 ansChoice1:@"choice1"
                                                 ansChoice2:@"choice2"
@@ -611,7 +609,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
   }
   
   for (int i = 30; i < 60; i++) {
-    NSString *quizText = [NSString stringWithFormat:@"Level 2 Question %d", (i+1)];
+    NSString *quizText = [NSString stringWithFormat:@"Level 2 Question %zd", (i+1)];
     QuizObject *obj = [[QuizObject alloc] initWithQuizText:quizText
                                                 ansChoice1:@"choice1"
                                                 ansChoice2:@"choice2"
@@ -623,7 +621,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
   }
   
   for (int i = 60; i < 100; i++) {
-    NSString *quizText = [NSString stringWithFormat:@"Level 3 Question %d", (i+1)];
+    NSString *quizText = [NSString stringWithFormat:@"Level 3 Question %zd", (i+1)];
     QuizObject *obj = [[QuizObject alloc] initWithQuizText:quizText
                                                 ansChoice1:@"choice1"
                                                 ansChoice2:@"choice2"
@@ -640,7 +638,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
 - (void)sendQuizResultLogToServerWithQuizMode:(NSInteger)quizMode
                                     quizScore:(NSInteger)quizScore {
   NSString *UUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-  NSString *urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=insertLog&device_id=%@&player_name=no_name&category_id=%d&score=%d&device_os=ios", UUID, (quizMode + 1),quizScore];
+  NSString *urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=insertLog&device_id=%@&player_name=no_name&category_id=%zd&score=%zd&device_os=ios", UUID, (quizMode + 1),quizScore];
   NSURL *url = [NSURL URLWithString:urlString];
   NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
   NSOperationQueue *queue = [[NSOperationQueue alloc] init];
@@ -660,7 +658,7 @@ NSString * const URLNumNaoFacebookPage = @"https://m.facebook.com/thechappters";
 - (void)sendQuizRankToServerWithQuizMode:(NSInteger)quizMode
                                     quizScore:(NSInteger)quizScore
                               playerName:(NSString *)playerName {
-  NSString *urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=insertRank&player_name=%@&category_id=%d&score=%d&device_os=ios", playerName, (quizMode + 1),quizScore];
+  NSString *urlString = [NSString stringWithFormat:@"http://quiz.thechappters.com/webservice.php?app_id=2&method=insertRank&player_name=%@&category_id=%zd&score=%zd&device_os=ios", playerName, (quizMode + 1),quizScore];
   NSString *properUrlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   NSURL *url = [NSURL URLWithString:properUrlString];
   NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];

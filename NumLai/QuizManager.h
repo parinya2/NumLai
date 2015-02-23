@@ -25,17 +25,17 @@ typedef NS_ENUM(NSInteger, NumLaiQuizMode) {
 
 @interface QuizManager : NSObject
 
-@property (strong, nonatomic) NSArray *quizListOnAir;
-@property (strong, nonatomic) NSArray *quizListRetroCh3;
-@property (strong, nonatomic) NSArray *quizListRetroCh5;
-@property (strong, nonatomic) NSArray *quizListRetroCh7;
+@property (strong, nonatomic) NSArray *quizListMode1;
+@property (strong, nonatomic) NSArray *quizListMode2;
+@property (strong, nonatomic) NSArray *quizListMode3;
+@property (strong, nonatomic) NSArray *quizListMode4;
 @property (strong, nonatomic) NSArray *quizResultList;
 @property (strong, nonatomic) NSArray *quizRankList;
 
-@property (strong, nonatomic) NSData *xmlDataOnAir;
-@property (strong, nonatomic) NSData *xmlDataRetroCh3;
-@property (strong, nonatomic) NSData *xmlDataRetroCh5;
-@property (strong, nonatomic) NSData *xmlDataRetroCh7;
+@property (strong, nonatomic) NSData *xmlDataMode1;
+@property (strong, nonatomic) NSData *xmlDataMode2;
+@property (strong, nonatomic) NSData *xmlDataMode3;
+@property (strong, nonatomic) NSData *xmlDataMode4;
 @property (strong, nonatomic) NSData *xmlDataQuizResult;
 @property (strong, nonatomic) NSData *xmlDataQuizRank;
 

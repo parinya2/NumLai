@@ -136,19 +136,19 @@ const float LoadNextQuizDelayTime = 0.25;
      QuizManager *quizManager = [QuizManager sharedInstance];
      switch (weakSelf.quizMode) {
        case NumLaiQuizMode1: {
-         weakSelf.quizList = quizManager.quizListOnAir;
+         weakSelf.quizList = quizManager.quizListMode1;
        } break;
          
        case NumLaiQuizMode2: {
-         weakSelf.quizList = quizManager.quizListRetroCh3;
+         weakSelf.quizList = quizManager.quizListMode2;
        } break;
          
        case NumLaiQuizMode3: {
-         weakSelf.quizList = quizManager.quizListRetroCh5;
+         weakSelf.quizList = quizManager.quizListMode3;
        } break;
          
        case NumLaiQuizMode4: {
-         weakSelf.quizList = quizManager.quizListRetroCh7;
+         weakSelf.quizList = quizManager.quizListMode4;
        } break;
          
        default:

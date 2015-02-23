@@ -106,7 +106,7 @@ NSString * const RetroCh7ProductPurchasedKey = @"PPVIDUS";
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue {
   NSMutableArray *purchasedItemIDs = [[NSMutableArray alloc] init];
   
-  NSLog(@"received restored transactions: %d", queue.transactions.count);
+  NSLog(@"received restored transactions: %zd", queue.transactions.count);
   for (SKPaymentTransaction *transaction in queue.transactions)
   {
     NSString *productID = transaction.payment.productIdentifier;
