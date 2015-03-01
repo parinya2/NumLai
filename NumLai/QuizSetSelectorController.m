@@ -16,6 +16,7 @@
 #import "appID.h"
 #import "QuizManager.h"
 #import "AVFoundation/AVAudioPlayer.h"
+#import "QuizResultController.h"
 
 @interface QuizSetSelectorController ()
 
@@ -278,8 +279,9 @@
     if (IAPInstance.quizMode2Purchased) {
       [self goToQuizDetail:NumLaiQuizMode1];
     } else {
+      NSString *msg = [NSString stringWithFormat:@"เธอสามารถปลดล๊อดโหมดเพลงประกอบละคร ได้อย่างง่ายๆ เพียงแค่เล่นโหมดเพลงฮิตติดชาร์ทให้ได้ %zd คะแนนเท่านั้นนะจ๊ะ !!", QuizScoreToUnlockNextMode];
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                      message:@"เธอสามารถปลดล๊อดโหมดเพลงประกอบละคร ได้อย่างง่ายๆ เพียงแค่เล่นโหมดเพลงฮิตติดชาร์ทให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
+                                                      message:msg
                                                      delegate:self
                                             cancelButtonTitle:@"ตกลงจ้ะ"
                                             otherButtonTitles:nil];
@@ -293,8 +295,9 @@
       if (IAPInstance.quizMode3Purchased) {
         [self goToQuizDetail:NumLaiQuizMode2];
       } else {
+        NSString *msg = [NSString stringWithFormat:@"เธอสามารถปลดล๊อดโหมดเพลงยุคไนนตี้ 90s ได้อย่างง่ายๆ เพียงแค่เล่นโหมดเพลงประกอบละคร ให้ได้ %zd คะแนนเท่านั้นนะจ๊ะ !!", QuizScoreToUnlockNextMode];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                        message:@"เธอสามารถปลดล๊อดโหมดเพลงยุคไนนตี้ 90s ได้อย่างง่ายๆ เพียงแค่เล่นโหมดเพลงประกอบละคร ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
+                                                        message:msg
                                                        delegate:self
                                               cancelButtonTitle:@"ตกลงจ้ะ"
                                               otherButtonTitles:nil];
@@ -302,8 +305,9 @@
         [alert show];
       }
     } else {
+      NSString *msg = [NSString stringWithFormat:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดเพลงประกอบละคร ได้ง่ายๆ โดยการเล่นโหมดเพลงฮิตติดชาร์ทให้ได้ %zd คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย", QuizScoreToUnlockNextMode];
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                      message:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดเพลงประกอบละคร ได้ง่ายๆ โดยการเล่นโหมดเพลงฮิตติดชาร์ทให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย"
+                                                      message:msg
                                                      delegate:self
                                             cancelButtonTitle:@"ไม่ล่ะฮะ"
                                             otherButtonTitles:@"ซื้อจ้ะ",nil];
@@ -318,8 +322,9 @@
       if (IAPInstance.quizMode4Purchased) {
         [self goToQuizDetail:NumLaiQuizMode3];
       } else {
+        NSString *msg = [NSString stringWithFormat:@"เธอสามารถปลดล๊อดโหมดเพลงเพราะหน้า B ได้อย่างง่ายๆ เพียงแค่เล่นโหมดเพลงยุคไนนตี้ 90s ให้ได้ %zd คะแนนเท่านั้นนะจ๊ะ !!", QuizScoreToUnlockNextMode];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                        message:@"เธอสามารถปลดล๊อดโหมดเพลงเพราะหน้า B ได้อย่างง่ายๆ เพียงแค่เล่นโหมดเพลงยุคไนนตี้ 90s ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ !!"
+                                                        message:msg
                                                        delegate:self
                                               cancelButtonTitle:@"ตกลงจ้ะ"
                                               otherButtonTitles:nil];
@@ -327,8 +332,9 @@
         [alert show];
       }
     } else {
+      NSString *msg = [NSString stringWithFormat:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดเพลงยุคไนนตี้ 90s ได้ง่ายๆ โดยการเล่นโหมดเพลงประกอบละคร ให้ได้ %zd คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย", QuizScoreToUnlockNextMode];
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                      message:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดเพลงยุคไนนตี้ 90s ได้ง่ายๆ โดยการเล่นโหมดเพลงประกอบละคร ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย"
+                                                      message:msg
                                                      delegate:self
                                             cancelButtonTitle:@"ไม่ซื้อ"
                                             otherButtonTitles:@"ซื้อต่อ",nil];
@@ -341,8 +347,9 @@
     if (IAPInstance.quizMode4Purchased) {
       [self goToQuizDetail:NumLaiQuizMode4];
     } else {
+      NSString *msg = [NSString stringWithFormat:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดเพลงเพราะหน้า B ได้ง่ายๆ โดยการเล่นโหมดเพลงยุคไนนตี้ 90s ให้ได้ %zd คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย", QuizScoreToUnlockNextMode];
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"โปรดทราบ"
-                                                      message:@"ถ้าไม่อยากจ่ายเงินซื้อ เธอสามารถปลดล๊อคโหมดเพลงเพราะหน้า B ได้ง่ายๆ โดยการเล่นโหมดเพลงยุคไนนตี้ 90s ให้ได้ 30 คะแนนเท่านั้นนะจ๊ะ ต้องการซื้อต่อมั้ย"
+                                                      message:msg
                                                      delegate:self
                                             cancelButtonTitle:@"ไม่ซื้อ"
                                             otherButtonTitles:@"ซื้อต่อ",nil];

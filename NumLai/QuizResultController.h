@@ -11,6 +11,8 @@
 #import "GADBannerView.h"
 #import "GADInterstitial.h"
 
+extern NSInteger const QuizScoreToUnlockNextMode;
+
 @interface QuizResultController : UIViewController <UIAlertViewDelegate, GADBannerViewDelegate, GADInterstitialDelegate> {
   GADBannerView *bannerView_;
 }

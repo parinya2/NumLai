@@ -24,6 +24,7 @@ NSString * const RateAppisVisitedKey = @"RateAppIsVisited";
 NSInteger const PlayCountForAlert = 10;
 NSInteger const PlayCountForInterstitial = 3;
 NSInteger const PlayerNameMaxLength = 40;
+NSInteger const QuizScoreToUnlockNextMode = 40;
 
 @interface QuizResultController ()
 
@@ -231,10 +232,10 @@ NSInteger const PlayerNameMaxLength = 40;
 }
 
 - (void)checkQuizResult {
-  NSInteger quizScoreToUnlock = 30;
+  
   NumLaiIAPHelper *IAPInstance = [NumLaiIAPHelper sharedInstance];
   
-  if (self.quizScore >= quizScoreToUnlock) {
+  if (self.quizScore >= QuizScoreToUnlockNextMode) {
     switch (self.quizMode) {
       case NumLaiQuizMode1: {
         // Mode: On air

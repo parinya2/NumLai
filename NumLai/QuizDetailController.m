@@ -21,8 +21,8 @@
 #import "GAITracker.h"
 #import "GAIDictionaryBuilder.h"
 
-const NSInteger QuizScoreToPassLevel1 = 8;
-const NSInteger QuizScoreToPassLevel2 = 16;
+const NSInteger QuizScoreToPassLevel1 = 15;
+const NSInteger QuizScoreToPassLevel2 = 30;
 const NSInteger StartCountDounTime = 60;
 const NSInteger penaltyTime = 3;
 const NSInteger bonusTime = 1;
