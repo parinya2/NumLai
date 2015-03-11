@@ -24,7 +24,7 @@ NSString * const RateAppisVisitedKey = @"RateAppIsVisited";
 NSInteger const PlayCountForAlert = 10;
 NSInteger const PlayCountForInterstitial = 3;
 NSInteger const PlayerNameMaxLength = 40;
-NSInteger const QuizScoreToUnlockNextMode = 40;
+NSInteger const QuizScoreToUnlockNextMode = 30;
 
 @interface QuizResultController ()
 
